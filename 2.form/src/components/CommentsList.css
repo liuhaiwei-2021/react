@@ -1,0 +1,16 @@
+/** @format */
+
+.container {
+  width: 300px;
+  border: 1px solid;
+  margin: 0.1rem 0.3rem;
+}
+.comments {
+  margin: 0.2rem 0.5rem;
+}
+.comments input,
+textarea,
+button {
+
+  margin-top: 10px;
+}
