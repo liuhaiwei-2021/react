@@ -3,6 +3,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import img from "./images/cat.jpg";
+import PropTypes from "prop-types";
 
 export class Mouse extends Component {
   state = {
@@ -22,6 +23,9 @@ export class Mouse extends Component {
     return this.props.children(this.state);
   }
 }
+Mouse.propTypes = {
+  children: PropTypes.func.isRequired,
+};
 
 function App() {
   return (
@@ -29,7 +33,7 @@ function App() {
       <Mouse
         children={(mouse) => (
           <img
-            class='fit-picture'
+            className='fit-picture'
             src={img}
             style={{
               position: "absolute",
