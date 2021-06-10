@@ -2,11 +2,11 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-// import App from './components/App';
-import CommentsList from "./components/CommentsList";
+import App from "./App";
 
 ReactDOM.render(
-  // <App />,
-  <CommentsList />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
