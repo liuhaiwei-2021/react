@@ -19,22 +19,35 @@ export class Mouse extends Component {
     window.addEventListener("mousemove", this.handleMouseMove);
   }
   render() {
-    return this.props.render(this.state)
+    return this.props.children(this.state);
   }
 }
 
 function App() {
-  return <div className='App'>
-    <Mouse render={ (mouse) => <img class="fit-picture"
-      src={img}
-      style={{
-        position:'absolute',
-        top: mouse.y,
-        left:mouse.x
-      }}
-     alt="cat"></img>}/>
-
-  </div>;
+  return (
+    <div className='App'>
+      <Mouse
+        children={(mouse) => (
+          <img
+            class='fit-picture'
+            src={img}
+            style={{
+              position: "absolute",
+              top: mouse.y,
+              left: mouse.x,
+            }}
+            alt='cat'></img>
+        )}
+      />
+      <Mouse
+        children={(mouse) => (
+          <p>
+            Mouse position: {mouse.x} {mouse.y}
+          </p>
+        )}
+      />
+    </div>
+  );
 }
 
 export default App;
