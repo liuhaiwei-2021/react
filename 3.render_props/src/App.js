@@ -16,8 +16,13 @@ export class Mouse extends Component {
       y: e.clientY,
     });
   };
+
   componentDidMount() {
     window.addEventListener("mousemove", this.handleMouseMove);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener("mousemove", this.handleMouseMove)
   }
   render() {
     return this.props.children(this.state);
@@ -26,6 +31,7 @@ export class Mouse extends Component {
 Mouse.propTypes = {
   children: PropTypes.func.isRequired,
 };
+
 
 function App() {
   return (
