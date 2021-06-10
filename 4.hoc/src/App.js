@@ -27,8 +27,13 @@ function withMouse(WrappedComponent) {
       return <WrappedComponent {...this.state} />;
     }
   }
-
+  //  displayName
+  Mouse.displayName = `withMouse${getDisplayName(WrappedComponent)}`;
   return Mouse;
+}
+
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || "Component";
 }
 
 const Position = (props) => (
