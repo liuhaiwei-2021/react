@@ -1,0 +1,95 @@
+/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  min-width: 450px;
+  max-width: 700px;
+  width: 80%;
+  margin: auto;
+}
+.todo-list {
+  margin-top: 20px;
+}
+
+.header {
+  display: block;
+  height: 75px;
+  background: darkcyan;
+  padding: 1rem;
+  text-align: center;
+}
+.App {
+  background: rgb(153, 151, 151);
+  min-height: 100vh;
+}
+.header h1 {
+  font-weight: 700;
+}
+.add-todo .flex {
+  display: flex;
+  padding: 2rem 0;
+}
+.add-todo small {
+  color: #fd5555;
+}
+.add-todo input[type="text"] {
+  display: block;
+  height: 70px;
+  padding: 0.2rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  border-radius: 0.4rem 0 0 0.4rem;
+  flex: 5;
+}
+.add-todo input[type="submit"] {
+  padding: 0.2rem 1rem;
+  background: darkcyan;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  flex: 1;
+  border-radius: 0 0.4rem 0.4rem 0;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.add-todo input[type="submit"]:hover {
+  background: rgb(3, 82, 82);
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 5px 5px 10px 0 #000;
+}
+.flex {
+  display: flex;
+}
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.change-btn {
+  background: rgb(147, 173, 173);
+}
+.delete-btn {
+  background: rgb(179, 111, 111);
+}
+.completed {
+  text-decoration: line-through;
+  color: #929292;
+}
