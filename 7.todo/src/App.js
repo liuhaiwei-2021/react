@@ -3,7 +3,7 @@
 import "./App.css";
 import AddTodoForm from "./components/AddTodoForm";
 import Header from "./components/Header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import TodoList from "./components/TodoList";
 
@@ -33,6 +33,7 @@ function App() {
         ...prevTodos,
       ];
     });
+    // localStorage.setItem("todos", JSON.stringify(todos));
   };
   const changeTodoCallback = (id, newTitle) => {
     setTodos((prevTodos) => {
@@ -43,12 +44,36 @@ function App() {
         return todo;
       });
     });
+    // localStorage.setItem("todos", JSON.stringify(todos));
   };
+  const toggleCompletedCallback = (id) => {
+    let newTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+  const removeTodoCallback = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+    // localStorage.setItem("todos", JSON.stringify(todos));
+  };
+  useEffect(() => { //watcher
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   return (
     <div className='App'>
       <Header title='Todos' />
       <AddTodoForm addTodoCallback={addTodoCallback} />
-      <TodoList todos={todos} changeTodoCallback={changeTodoCallback} />
+      <TodoList
+        todos={todos}
+        changeTodoCallback={changeTodoCallback}
+        toggleCompletedCallback={toggleCompletedCallback}
+        removeTodoCallback={removeTodoCallback}
+      />
     </div>
   );
 }

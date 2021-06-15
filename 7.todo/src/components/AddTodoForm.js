@@ -2,11 +2,13 @@
 
 import React from "react";
 import { useRef, useState } from "react";
+import Model from "./Model";
 
 const AddTodoForm = ({ addTodoCallback }) => {
   const inputRef = useRef();
   const [title, setTitle] = useState("");
-  const [error, setError] = useState(undefined);
+  // const [error, setError] = useState(undefined);
+  const [showModel, setShowModel] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() !== "") {
@@ -14,7 +16,7 @@ const AddTodoForm = ({ addTodoCallback }) => {
       setTitle("");
       inputRef.current.focus();
     } else {
-      setError("You need add something todo.");
+      setShowModel(true);
     }
   };
 
@@ -30,7 +32,10 @@ const AddTodoForm = ({ addTodoCallback }) => {
             onChange={(e) => setTitle(e.target.value)}></input>
           <input type='submit' value='ADD'></input>
         </div>
-        <small>{error}</small>
+        {/* <small>{error}</small> */}
+        {showModel && (
+          <Model text='you must add something' visible={setShowModel} />
+        )}
       </form>
     </div>
   );
