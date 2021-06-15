@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import TodoList from "./components/TodoList";
 
 function App() {
-  const [todos, settodos] = useState([
+  const [todos, setTodos] = useState([
     {
       id: uuidv4(),
       title: "take out the trash",
@@ -27,18 +27,28 @@ function App() {
   ]);
 
   const addTodoCallback = (todoTitle) => {
-    settodos((prevTodos) => {
+    setTodos((prevTodos) => {
       return [
         { id: uuidv4(), title: todoTitle, completed: false },
         ...prevTodos,
       ];
     });
   };
+  const changeTodoCallback = (id, newTitle) => {
+    setTodos((prevTodos) => {
+      return prevTodos.map((todo) => {
+        if (todo.id === id) {
+          todo.title = newTitle;
+        }
+        return todo;
+      });
+    });
+  };
   return (
     <div className='App'>
       <Header title='Todos' />
       <AddTodoForm addTodoCallback={addTodoCallback} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} changeTodoCallback={changeTodoCallback} />
     </div>
   );
 }

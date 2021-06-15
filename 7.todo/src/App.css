@@ -33,7 +33,9 @@
   padding: 2rem 0;
 }
 .add-todo small {
+  display: block;
   color: #fd5555;
+  height: 50px;
 }
 .add-todo input[type="text"] {
   display: block;
@@ -92,4 +94,21 @@
 .completed {
   text-decoration: line-through;
   color: #929292;
+}
+.todo-title {
+  cursor: pointer;
+  user-select: none;
+}
+.change-todo input {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+.change-todo button {
+  padding: 0.2rem 0.5rem;
+  margin-left: 1rem;
+  background: rgb(140, 172, 109);
+  font-weight: 700;
+  border: 2px solid transparent;
 }
