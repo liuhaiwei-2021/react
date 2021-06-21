@@ -1,11 +1,15 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import NavBar from "../components/NavBar";
 
 const Customers = () => {
-    return (
-        <div>
-            Customers 
-        </div>
-    )
-}
+  return (
+    <div>
+      <NavBar />
+      Customers
+    </div>
+  );
+};
 
-export default Customers
+export default Customers;

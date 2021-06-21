@@ -1,12 +1,15 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import NavBar from "../components/NavBar";
 
 const Overviews = () => {
-    return (
-        <div>
-            OVERVIEWS
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <NavBar />
+      OVERVIEWS
+    </div>
+  );
+};
 
-export default Overviews
+export default Overviews;
