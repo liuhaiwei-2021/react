@@ -10,8 +10,7 @@ const ShoppingList = ({
   removeShoppingCallback,
 }) => {
   return (
-    <div className='container'>
-     
+    <div className='container'>     
         {shoppingList.map((shopping) => (
           <ShoppingItem
             key={shopping.id}

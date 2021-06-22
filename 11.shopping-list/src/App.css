@@ -7,12 +7,18 @@
 }
 .shopping {
   background: rgb(94, 92, 92);
+  max-width: 700px;
+  min-width: 400px;
 }
+
 .html body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .navbar {
   background: darkcyan;
+}
+.add-form {
+  /* flex: 4 1; */
 }
 .add-form input[type="text"] {
   flex: 4;
@@ -33,9 +39,8 @@
   transition: all 0.3s;
 }
 .add-form input[type="submit"]:hover {
+  flex: 1;
   background: rgb(1, 82, 82);
-  max-width: 700px;
-  min-width: 400px;
 }
 .add-form small {
   color: rgb(151, 59, 59);
@@ -78,7 +83,7 @@
 }
 .change-item button {
   background: rgb(36, 145, 69);
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 0.3rem;
   font-weight: 700;
   border: 2px solid transparent;

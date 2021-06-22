@@ -16,7 +16,7 @@ function App() {
   const addShoppingItemCallback = (shoppingTitle) => {
     setShoppingList((prevShoppingList) => {
       return [
-        { id: Date.now().toString, title: shoppingTitle, completed: false },
+        { id: Date.now().toString(), title: shoppingTitle, completed: false },
         ...prevShoppingList,
       ];
     });
@@ -49,11 +49,11 @@ function App() {
     });
     setShoppingList(newShoppingList);
   };
-  const removeShoppingCallback = id => {
-    setShoppingList(prevShoppingList => {
-      prevShoppingList.filter(shopping=>shopping.id!==id)
-    })
-  }
+  const removeShoppingCallback = (id) => {
+    setShoppingList((prevShoppingList) => {
+      prevShoppingList.filter((shopping) => shopping.id !== id);
+    });
+  };
   return (
     <div className='shopping vh-100'>
       <Navbar />
