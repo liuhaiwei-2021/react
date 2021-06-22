@@ -1,0 +1,85 @@
+/** @format */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.shopping {
+  background: rgb(94, 92, 92);
+}
+.html body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+  background: darkcyan;
+}
+.add-form input[type="text"] {
+  flex: 4;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.add-form input[type="submit"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: darkcyan;
+  transition: all 0.3s;
+}
+.add-form input[type="submit"]:hover {
+  background: rgb(1, 82, 82);
+  max-width: 700px;
+  min-width: 400px;
+}
+.add-form small {
+  color: rgb(151, 59, 59);
+}
+
+.shopping-item {
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: #929292;
+}
+.btn {
+  border: none;
+  outline: none;
+}
+.btn-change {
+  background: darkcyan;
+  padding: 0.5rem 1rem;
+}
+.btn-delete {
+  background: rgb(212, 140, 140);
+  padding: 0.5rem 1rem;
+}
+.shopping-title {
+  cursor: pointer;
+  /* user-select: user cann't select the text; */
+  user-select: none;
+}
+.change-item input {
+  padding: 0.2rem 0.5rem;
+  margin-right: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.change-item button {
+  background: rgb(36, 145, 69);
+  padding: .2rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
