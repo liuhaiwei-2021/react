@@ -5,10 +5,10 @@ import NavBar from "../components/NavBar";
 
 const Overviews = () => {
   return (
-    <div>
+    <>
       <NavBar />
-      OVERVIEWS
-    </div>
+      <div className='container'>Översikit</div>
+    </>
   );
 };
 

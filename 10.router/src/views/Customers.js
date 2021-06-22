@@ -2,13 +2,23 @@
 
 import React from "react";
 import NavBar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
-const Customers = () => {
+const Customers = ({ customers }) => {
   return (
-    <div>
+    <>
       <NavBar />
-      Customers
-    </div>
+      <div className='container'>
+        {customers.map((customer) => (
+          <Link
+            to={`customers/customer/${customer.id}`}
+            key={customer.id}
+            className='btn d-block border my-3'>
+            <div>{customer.name}</div>
+          </Link>
+        ))}
+      </div>
+    </>
   );
 };
 
