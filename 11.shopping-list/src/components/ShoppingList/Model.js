@@ -1,18 +1,23 @@
-import React from 'react'
+/** @format */
 
-const Model = () => {
-    return (
-        <div className="model">
-            <div className="card">
-                <h3>
-                    You should buy your shopping item first!
-                </h3>
-                <button className="btn btn-delete">close</button>
+import React from "react";
 
-            </div>
-            
-        </div>
-    )
-}
+const Model = ({ text, visiable }) => {
+    const handleClick = (e) => {
+      if (e.target === e.currentTarget) 
+          visiable(false);
+  };
+  return (
+    <div className='model' onClick={handleClick}>
+      <div className='card'>
+        <h3>{text}</h3>
+        <button className='btn btn-delete'onClick={handleClick}>Close</button>
+      </div>
+    </div>
+  );
+};
 
-export default Model
+Model.defaultProps = {
+  text: "Default text",
+};
+export default Model;

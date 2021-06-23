@@ -13,17 +13,20 @@ const ShoppingItem = ({
   removeShoppingCallback,
 }) => {
   const [change, setChange] = useState(false);
+  const [model, setmodel] = useState(false);
   const toggleChange = () => {
     setChange((prev) => !prev);
   };
   const changeShopping = (text) => {
     changeShoppingItem(shopping.id, text);
     setChange(false);
-    };
-    const handleDelete = () => {
-        if(shopping.completed)
-        removeShoppingCallback(shopping.id)        
-    }
+  };
+  const handleDelete = () => {
+    if (shopping.completed) {
+      removeShoppingCallback(shopping.id);
+    }     
+    setmodel(true);
+  };
   return (
     <>
       <div className='shopping-item d-flex justify-content-between'>
@@ -40,14 +43,12 @@ const ShoppingItem = ({
           <button className='btn btn-change' onClick={toggleChange}>
             Change
           </button>
-          <button
-            className='btn btn-delete'
-            onClick={handleDelete}>
+          <button className='btn btn-delete' onClick={handleDelete}>
             Delete
-          </button>         
+          </button>
         </div>
       </div>
-      <Model/>
+      {model && <Model text='you must buy the item first' visiable={setmodel} />}
     </>
   );
 };

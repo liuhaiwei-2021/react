@@ -2,7 +2,7 @@
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddItemForm from "./components/ShoppingList/AddItemForm";
 import ShoppingList from "./components/ShoppingList/ShoppingList";
 
@@ -54,6 +54,13 @@ function App() {
       prevShoppingList.filter((shopping) => shopping.id !== id)
     );
   };
+  useEffect(() => {
+    const storedShoppingList = JSON.parse(localStorage.getItem("shoppingList"));
+    if (storedShoppingList) setShoppingList(storedShoppingList);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
+  });
   return (
     <div className='shopping vh-100'>
       <Navbar />
