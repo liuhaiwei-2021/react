@@ -50,9 +50,9 @@ function App() {
     setShoppingList(newShoppingList);
   };
   const removeShoppingCallback = (id) => {
-    setShoppingList((prevShoppingList) => {
-      prevShoppingList.filter((shopping) => shopping.id !== id);
-    });
+    setShoppingList((prevShoppingList) =>
+      prevShoppingList.filter((shopping) => shopping.id !== id)
+    );
   };
   return (
     <div className='shopping vh-100'>

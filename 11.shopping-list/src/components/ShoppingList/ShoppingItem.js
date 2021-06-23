@@ -18,7 +18,11 @@ const ShoppingItem = ({
   const changeShopping = (text) => {
     changeShoppingItem(shopping.id, text);
     setChange(false);
-  };
+    };
+    const handleDelete = () => {
+        if(shopping.completed)
+        removeShoppingCallback(shopping.id)        
+    }
   return (
     <div className='shopping-item'>
       <div className='d-flex justify-content-between'>
@@ -37,9 +41,10 @@ const ShoppingItem = ({
           </button>
           <button
             className='btn btn-delete'
-            onClick={() => removeShoppingCallback(shopping.id)}>
+            onClick={handleDelete}>
             Delete
           </button>
+         
         </div>
       </div>
     </div>

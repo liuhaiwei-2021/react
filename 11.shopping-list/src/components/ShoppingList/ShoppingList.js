@@ -10,7 +10,8 @@ const ShoppingList = ({
   removeShoppingCallback,
 }) => {
   return (
-    <div className='container'>     
+    <div className='container'>
+      <div className='shopping-list'>
         {shoppingList.map((shopping) => (
           <ShoppingItem
             key={shopping.id}
@@ -20,7 +21,10 @@ const ShoppingList = ({
             removeShoppingCallback={removeShoppingCallback}
           />
         ))}
-
+      </div>
+      {!shoppingList.length && (
+        <h2 className='shopping-item text-center'>No shopping item left!</h2>
+      )}
     </div>
   );
 };
