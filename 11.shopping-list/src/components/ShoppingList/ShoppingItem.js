@@ -4,6 +4,7 @@ import React from "react";
 import ShoppingItemTitle from "./ShoppingItemTitle";
 import { useState } from "react";
 import ChangeItem from "./ChangeItem";
+import Model from "./Model";
 
 const ShoppingItem = ({
   shopping,
@@ -24,8 +25,8 @@ const ShoppingItem = ({
         removeShoppingCallback(shopping.id)        
     }
   return (
-    <div className='shopping-item'>
-      <div className='d-flex justify-content-between'>
+    <>
+      <div className='shopping-item d-flex justify-content-between'>
         {change ? (
           <ChangeItem shopping={shopping} changeShopping={changeShopping} />
         ) : (
@@ -43,11 +44,11 @@ const ShoppingItem = ({
             className='btn btn-delete'
             onClick={handleDelete}>
             Delete
-          </button>
-         
+          </button>         
         </div>
       </div>
-    </div>
+      <Model/>
+    </>
   );
 };
 
