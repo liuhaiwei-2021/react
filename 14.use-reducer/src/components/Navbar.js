@@ -14,13 +14,18 @@ function Navbar() {
         </NavLink>
       </li>
       <li className='nav-item'>
-        <NavLink to='/usereducer' exact className='nav-link' exact>
+        <NavLink to='/usereducer' exact className='nav-link'>
           useReducer-counter
         </NavLink>
       </li>
       <li className='nav-item'>
-        <NavLink to='/todos' exact className='nav-link' exact>
-          useReducer-todos
+        <NavLink to='/todos' exact className='nav-link'>
+          Todos
+        </NavLink>
+      </li>
+      <li className='nav-item'>
+        <NavLink to='/products' exact className='nav-link'>
+          Products
         </NavLink>
       </li>
     </ul>
