@@ -13,6 +13,11 @@ function Navbar() {
           Props
         </NavLink>
       </li>
+      <li className='nav-item'>
+        <NavLink to='/context' className='nav-link' exact activeClassName='active'>
+          useContext
+        </NavLink>
+      </li>
     </ul>
   );
 }

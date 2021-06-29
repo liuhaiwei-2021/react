@@ -5,7 +5,9 @@ import { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import WithProps from "./views/WithProps";
+import WithContext from "./views/WithContext";
 import { v4 as uuidv4 } from "uuid";
+import { TodoContext } from "./contexts/Context";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -44,6 +46,10 @@ function App() {
             timeAgo={timeAgo}
           />
         </Route>
+        <TodoContext.Provider
+          value={{todos, addTodoCallback, removeTodoCallback, timeAgo}}>
+          <Route path='/context' exact component={WithContext} />
+        </TodoContext.Provider>
       </Switch>
     </BrowserRouter>
   );
