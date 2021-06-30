@@ -60,7 +60,7 @@ a {
 .post {
   box-shadow: 5px 5px 10px 0 #5d5d5d;
   border-radius: 0.5rem;
-  margin-top: 1rem 0;
+  margin: 1rem 0;
   padding: 2rem;
 }
 .post h2 {
@@ -99,4 +99,8 @@ textarea.form-control:hover {
   color: #fff;
   width: 100px;
   border-radius: 0.5rem;
+}
+.bg {
+  min-height: calc(100vh - 53px);
+  padding-top: 2rem;
 }

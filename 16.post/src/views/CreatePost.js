@@ -1,9 +1,14 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { ThemeContext } from "../contexts/ThemeContext";
+import { PostsContext } from "../contexts/PostsContext";
 
-const CreatePost = ({ addPost }) => {
+const CreatePost = () => {
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
+  const { addPost } = useContext(PostsContext);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const history = useHistory();
@@ -25,7 +30,8 @@ const CreatePost = ({ addPost }) => {
           id='title'
           className='form-control'
           value={title}
-          onChange={(e) => setTitle(e.target.value)}></input>
+          onChange={(e) => setTitle(e.target.value)}
+          style={{ background: theme.bg, color: theme.text }}></input>
       </div>
       <div className='input-group'>
         <label htmlFor='body' className='input-label'>

@@ -5,39 +5,26 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Posts from "./views/Posts";
 import CreatePost from "./views/CreatePost";
-import { useState } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
+import PostsContextProvider from "./contexts/PostsContext";
 
 function App() {
-  const [posts, setPosts] = useState([
-    { id: 1, title: "first", body: "This is the first post" },
-    { id: 2, title: "second", body: "This is the second post" },
-    { id: 3, title: "third", body: "This is the third post" },
-  ]);
-  const addPost = (title, body) => {
-    let post = {
-      id: Date.now().toString(),
-      title,
-      body,
-    };
-    setPosts((prevposts) => {
-      return [...prevposts, post];
-    });
-  };
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
 
   return (
     <div className='App'>
       <Router>
         <Navbar />
-        <div className='bg'>
+        <div className='bg' style={{ background: theme.bg }}>
           <div className='container'>
-            <Switch>
-              <Route path='/' exact render={() => <Posts posts={posts} />} />
-              <Route
-                path='/create'
-                exact
-                render={() => <CreatePost addPost={addPost} />}
-              />
-            </Switch>
+            <PostsContextProvider>
+              <Switch>
+                <Route path='/' exact component={Posts} />
+                <Route path='/create' exact component={CreatePost} />
+              </Switch>
+            </PostsContextProvider>
           </div>
         </div>
       </Router>
