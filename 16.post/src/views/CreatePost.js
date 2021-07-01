@@ -4,17 +4,20 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { PostsContext } from "../contexts/PostsContext";
+import actiontypes from "../reducers/actiontypes";
 
 const CreatePost = () => {
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
-  const { addPost } = useContext(PostsContext);
+  // const { addPost } = useContext(PostsContext);
+  const { dispatch } = useContext(PostsContext);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const history = useHistory();
   const onSub = (e) => {
     e.preventDefault();
-    addPost(title, body);
+    // addPost(title, body);
+    dispatch({ type: actiontypes().posts.addPost, payload: { title, body } });
     setTitle("");
     setBody("");
     history.push("/");
