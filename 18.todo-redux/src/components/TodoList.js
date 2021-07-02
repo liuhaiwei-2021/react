@@ -6,7 +6,6 @@ import { Input, Button, List } from "antd";
 import store from "../store";
 import actiontypes from "../store/reducer/actiontypes";
 
-
 const TodoList = () => {
   const [todo, setTodo] = useState("");
   const addTodo = () => {
@@ -15,12 +14,18 @@ const TodoList = () => {
       payload: { todo },
     });
     setTodo("");
-  };
+    };
+    const deleteTodo = (index) => {
+        store.dispatch({
+            type: actiontypes().todos.deleteTodo,
+            payload:index
+        })
+    }
   return (
-    <div style={{ margin: "10px" }}>
+    <div style={{ margin: "5px" }}>
       <div>
         <Input
-          style={{ width: "250px", marginRight: "5px" }}
+          style={{ width: "250px", marginRight: "5px", marginTop: "5px"}}
           placeholder='write something'
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
@@ -29,11 +34,11 @@ const TodoList = () => {
           Add
         </Button>
       </div>
-      <div style={{ margin: "10px", width: "300px" }}>
+      <div style={{ margin: "20px", width: "300px" }}>
         <List
           bordered
           dataSource={store.getState().list}
-          renderItem={(item) => <List.Item>{item}</List.Item>}></List>
+          renderItem={(item,index) => <List.Item key={item.index} onClick={deleteTodo.bind(index)}>{item}</List.Item>}></List>
       </div>
     </div>
   );
