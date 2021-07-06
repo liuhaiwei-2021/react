@@ -1,0 +1,27 @@
+/** @format */
+
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./components/navgation/Navbar";
+import { Provider } from "react-redux";
+import store from "./store";
+import News from "./views/News";
+import Login from "./views/Login";
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <div className='container'>
+          <Switch>
+            <Route exact path='/news' component={News} />
+            <Route exact path='/LOGIN' component={Login} />
+          </Switch>
+        </div>
+      </Router>
+    </Provider>
+  );
+}
+
+export default App;
