@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import News from "./views/News";
 import Login from "./views/Login";
+import PostDetails from "./views/PostDetails";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
         <Navbar />
         <div className='container'>
           <Switch>
-            <Route exact path='/news' component={News} />
-            <Route exact path='/LOGIN' component={Login} />
+            <Route exact path='/' component={News} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/posts/:id' component={PostDetails} />
           </Switch>
         </div>
       </Router>

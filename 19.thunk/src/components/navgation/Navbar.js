@@ -16,7 +16,7 @@ const Navbar = () => {
           LOGO
         </NavLink>
         <ul className="nav-links">
-          <li><NavLink exact to='/' className='nav-link' activeClassName='active-link'> News</NavLink></li>
+          <li><NavLink exact to='/' className='nav-link' activeClassName='active-link'>News</NavLink></li>
                   {
                       isAuth
                       ? <li><NavLink exact to='/creat ' className='nav-link'  activeClassName='active-link'>Creat</NavLink></li>

@@ -3,30 +3,35 @@
 import actiontypes from "../actiontypes";
 
 const initialState = {
-  list: [],
+  post: null,
   loading: null,
   error: undefined,
 };
 
-const postsReducer = (state = initialState, action) => {
+const postReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actiontypes().posts.loading:
+    case actiontypes().post.loading:
       return {
         ...state,
         loading: action.payload,
       };
-    case actiontypes().posts.getPostsSuccess:
+    case actiontypes().post.getOnePostsSuccess:
       return {
         ...state,
-        list: action.payload,
+        post: action.payload,
         loading: false,
         error: undefined,
       };
-    case actiontypes().posts.getPostsFailure:
+    case actiontypes().posts.getOnePostsFailure:
       return {
         ...state,
         error: action.payload,
         loading: false,
+      };
+    case actiontypes().post.clearPost:
+      return {
+        ...state,
+        post: action.payload,
       };
 
     default:
@@ -34,4 +39,4 @@ const postsReducer = (state = initialState, action) => {
   }
 };
 
-export default postsReducer;
+export default postReducer;

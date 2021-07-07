@@ -14,6 +14,26 @@ html {
   width: 80%;
   margin: auto;
 }
+.loader {
+  position: absolute;
+  background: rgb(145, 144, 144);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spinner {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  animation: spinner 1s ease infinite;
+}
 .navbar {
   background: darkslateblue;
   padding: 1rem 0;
@@ -48,4 +68,33 @@ html {
 .active-link {
   text-decoration: underline;
   color: orange;
+}
+.post {
+  box-shadow: 5px 5px 10px 0;
+  margin: 2rem 0;
+  /* padding: 2rem; */
+  border-radius: 0.7rem;
+}
+.post a {
+  text-decoration: none;
+  color: #333;
+  padding: 2rem;
+  display: inline-block;
+}
+.post h2 {
+  color: orange;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  align-items: center;
+}
+.details {
+  padding: 2rem;
+}
+.details h2 {
+  text-align: center;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }
