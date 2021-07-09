@@ -10,7 +10,11 @@ const Login = () => {
   const history = useHistory();
   const handleLogin = () => {
     dispatch(login());
-    history.push("/");
+    try {
+      history.push(history.location.state.from.pathname);
+    } catch {
+      history.push("/");
+    }
   };
   return (
     <div>

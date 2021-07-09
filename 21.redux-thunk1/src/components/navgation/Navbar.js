@@ -15,7 +15,7 @@ const Navbar = () => {
             <ul className="nav-links">
                 <li><NavLink className="nav-link" activeClassName="active-link" exact to='/'>News</NavLink></li>
                 {   isAuth
-                    ? <li><NavLink className="nav-link" activeClassName="active-link" exact to='/creat'>News</NavLink></li>
+                    ? <li><NavLink className="nav-link" activeClassName="active-link" exact to='/create'>Create</NavLink></li>
                     : <li><NavLink className="nav-link" activeClassName="active-link"exact to='/login'>Login</NavLink></li>
                 }          
 

@@ -65,14 +65,15 @@ body {
 .posts {
   margin: 2rem;
 }
-.post {
+.post,
+.create-form {
   box-shadow: 5px 5px 10px 0;
   margin: 2rem 0;
   /* padding: 2rem; */
   border-radius: 0.5rem;
 }
 .post a {
-  padding: 2rem;
+  /* padding: 2rem; */
   text-decoration: none;
 }
 .post h2 {
@@ -85,8 +86,46 @@ body {
 }
 .detail h2 {
   text-align: center;
+  position: relative;
+}
+.create-form {
+  padding: 2rem;
+}
+.create-form h1 {
+  color: orange;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.input-group {
+  margin-bottom: 2rem;
+}
+.input-group input,
+.input-group textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
 }
 
+.input-group textarea {
+  height: 30vh;
+  resize: none;
+}
+.create-form button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: darkslateblue;
+  cursor: pointer;
+  color: #fff;
+}
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 2rem;
+  color: red;
+  cursor: pointer;
+}
 @keyframes spinner {
   to {
     transform: rotate(360deg);
