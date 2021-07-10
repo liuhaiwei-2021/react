@@ -23,14 +23,15 @@ const PostDetails = () => {
     axios.delete(`http://localhost:9999/posts/${id}`).then(history.push("/"));
   };
   return (
-    <div >
+    <div>
       {loading && <Loader />}
       {post && (
         <div className='post detail'>
-          {isAuth && (
-            <i className='fas fa-times delete-btn' onClick={deleteOnePost}></i>
-          )}
-          <h2>{post.title} </h2>
+          <h2>
+            {post.title}
+            {isAuth && (
+              <i className='fas fa-times delete-btn' onClick={deleteOnePost}></i>)}
+          </h2>
           <p>{post.body}</p>
         </div>
       )}

@@ -84,6 +84,9 @@ body {
   padding: 1rem;
   color: #333;
 }
+.detail {
+  background: green;
+}
 .detail h2 {
   text-align: center;
   position: relative;
@@ -119,9 +122,10 @@ body {
   color: #fff;
 }
 .delete-btn {
+  background: blue;
   position: absolute;
-  top: 8px;
-  right: 16px;
+  top: 2rem;
+  right: 2rem;
   font-size: 2rem;
   color: red;
   cursor: pointer;
