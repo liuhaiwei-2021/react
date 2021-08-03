@@ -5,21 +5,21 @@ import { useState } from "react";
 import Post from "./components/Post";
 
 function App() {
-  const [post, setPost] = useState([
+  const [posts, setPosts] = useState([
     {
       id: 1,
       title: "post 1",
-      body: "this is post 1",
+      body: "this is post 3wghhqäpjhopjqhphipriehpperhpjwphjojsljhlsjlhjoajhospjhoprtjs",
     },
     {
       id: 2,
       title: "post 2",
-      body: "this is post 1",
+      body: "this is post 3wghhqäpjhopjqhphipriehpperhpjwphjojsljhlsjlhjoajhospjhoprtjs",
     },
     {
       id: 1,
       title: "post  3",
-      body: "this is post 3",
+      body: "this is post 3wghhqäpjhopjqhphipriehpperhpjwphjojsljhlsjlhjoajhospjhoprtjs",
     },
   ]);
 
@@ -36,7 +36,11 @@ function App() {
         <h1 className='text-center mt-5'>Please login</h1>
       )}
 
-      <Post title='this is post' body='hello' />
+      <div>
+        {posts.map((post) =>
+          loggedIn ? <Post title={post.title} body={post.body} /> : ""
+        )}
+      </div>
 
       <div className='text-center'>
         <button className='btn-lg mt-5' onClick={login}>

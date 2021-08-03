@@ -5,7 +5,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-.post {
+
+.card {
   border: 1px solid #333;
-  border-radius: 10px;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 3px 3px 5px 0 #333;
+}
+.dark {
+  background: #333;
+  color: #fff;
 }
