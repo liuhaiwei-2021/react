@@ -13,7 +13,7 @@ body {
 }
 .container {
   max-width: 700px;
-  min-width: 450px;
+  min-width: 520px;
   width: 80%;
   margin: auto;
 }
@@ -96,4 +96,48 @@ body {
 }
 .delete-btn {
   background: rgb(185, 141, 141);
+}
+.todo-title {
+  cursor: pointer;
+  user-select: none;
+}
+.change-todo input {
+  padding: 0.2rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.change-todo button {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 1 rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  background: rgb(85, 121, 121);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+.card {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 0.4rem;
+  box-shadow: 5px 5px 10px 0 #000;
+  display:grid;
+  grid-row: auto;
+}
+
+.card h3 {
+  margin: 2rem;
+}
+.card button {
+  display: inline-block;
 }
