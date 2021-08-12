@@ -1,0 +1,26 @@
+/** @format */
+.navbar {
+  height: 90px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.case-list-table {
+  border: 0px solid #000;
+}
+
+.title {
+  font-size: 1.7rem;
+}
+
+.form-textarea {
+  resize: none;
+  height: 150px;
+}
+.btn{
+  text-decoration: none;
+}
