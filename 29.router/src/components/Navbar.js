@@ -7,7 +7,9 @@ const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light shadow mb-5'>
       <div className='container'>
-        <Link className='navbar-brand'>Management System</Link>
+        <Link to='/' className='navbar-brand'>
+          Management System
+        </Link>
         <button
           className='navbar-toggler'
           type='button'
@@ -44,8 +46,12 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className='navbar-nav'>
-              <NavLink to='' exact className='nav-link' activeClassName='active'>
-                <i className="fas fa-cog"></i>
+              <NavLink
+                to='/#'
+                exact
+                className='nav-link'
+                activeClassName='active'>
+                <i className='fas fa-cog'></i>
               </NavLink>
             </div>
           </div>

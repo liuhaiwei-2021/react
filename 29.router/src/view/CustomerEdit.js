@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const CustomerDetails = ({ customers, setCustomerCallback, customer }) => {
+const CustomerEdit = ({ customer, setCustomerCallback }) => {
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,14 +18,9 @@ const CustomerDetails = ({ customers, setCustomerCallback, customer }) => {
           <h1>{customer.name}</h1>
           <small>Kundnr. {customer.id}</small>
         </div>
-        <div>
-          <Link to={`/customers/customer/edit/${customer.id}`}>
-            <i className='fas fa-edit'></i>
-          </Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default CustomerDetails;
+export default CustomerEdit;
