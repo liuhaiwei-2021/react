@@ -3,7 +3,29 @@
 .wrapper {
   height: 100vh;
 }
-.click{
-    user-select: none;
-    cursor: pointer;
+.click {
+  user-select: none;
+  cursor: pointer;
+}
+.spinner-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.342);
+}
+.spinner {
+  width: 75px;
+  height: 75px;
+  border: 7px solid transparent;
+  border-radius: 50%;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  animation: spinner 1s ease infinite;
+}
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }

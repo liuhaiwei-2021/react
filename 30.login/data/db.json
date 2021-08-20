@@ -1,3 +1,25 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "liuhaiwei2016@gmail.com",
+      "password": "$2a$10$8ZtWaffaLBgPhpn8pYqCm.y3kBGyhzts1dlu2u5BAfaKKcpcFX/FO",
+      "firstName": "Haiwei",
+      "lastName": "Liu",
+      "id": 1
+    },
+    {
+      "email": "liuhaiwei2017@gmail.com",
+      "password": "$2a$10$QYBF6vnuvnZuK0EZ/R.nrOS55NEfirmpL/yuHTMnuNRZwNBczaKP6",
+      "firstName": "Haiwei",
+      "lastName": "Liu",
+      "id": 2
+    },
+    {
+      "email": "liuhaiwei2018@gmail.com",
+      "password": "$2a$10$f.vdGpAKw2bs.4eEKtYQK.TxEfWxaz02ixFdQChvM5BlGT8hKXjuC",
+      "firstName": "Haiwei",
+      "lastName": "Liu",
+      "id": 3
+    }
+  ]
 }
